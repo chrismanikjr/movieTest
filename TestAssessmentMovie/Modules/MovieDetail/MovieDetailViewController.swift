@@ -253,7 +253,8 @@ extension MovieDetailViewController{
                 switch kind{
                 case K.ElementKind.sectionHeader:
                     guard let headerSupplementaryView = self.detailCollection.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleSupplementaryView.reuseIdentifier, for: indexPath) as? TitleSupplementaryView else{fatalError("Cannot Create Header More Rank Detail Bottom")}
-                    
+                    headerSupplementaryView.label.text = sectionType.rawValue
+
                     return headerSupplementaryView
                 default:
                     return nil
@@ -262,7 +263,7 @@ extension MovieDetailViewController{
                 switch kind{
                 case K.ElementKind.sectionHeader:
                     guard let headerSupplementaryView = self.detailCollection.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleSupplementaryView.reuseIdentifier, for: indexPath) as? TitleSupplementaryView else{fatalError("Cannot Create Header")}
-                    
+                    headerSupplementaryView.label.text = sectionType.rawValue
                     return headerSupplementaryView
                 case K.ElementKind.sectionFooter:
                     guard let footerSupplementaryView = self.detailCollection.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FooterLoadingSupplementaryView.reuseIdentifier, for: indexPath) as? FooterLoadingSupplementaryView else {fatalError("Can't create footer loading")}
